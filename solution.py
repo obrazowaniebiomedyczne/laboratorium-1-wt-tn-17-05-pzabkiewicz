@@ -15,7 +15,7 @@ def square(size, side, start):
 3 - Koło
 """
 def midcircle(size):
-    image = np.zeros((size, size)).astype(np.uint8)
+    image = np.zeros(size).astype(np.uint8)
     mid = (size[0] // 2, size[1] // 2)
     rsq = (min(size) // 4) ** 2
     for i in range(size[0]):
@@ -30,17 +30,15 @@ def midcircle(size):
 """
 def checkerboard(size):
     side_size = size // 8
-    image = np.zeros(size).astype(np.uint8)
-    for i in range(i):
-        for j in range(j):
+    image = np.zeros((size, size)).astype(np.uint8)
+    for i in range(size):
+        for j in range(size):
             origin_i = i * side_size
             origin_j = j * side_size
             if (i + j) % 2 == 0:
                 image[origin_i:origin_i + side_size, origin_j:origin_j + side_size] = 255
     return image
                 
-            
-
 """
 4 - Interpolacja najbliższych sąsiadów.
 """
